@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84944F5A187C0AAE00B10401 /* twitter_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84944F59187C0AAE00B10401 /* twitter_logo.jpg */; };
+		84944F5C187C0ABB00B10401 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5B187C0ABB00B10401 /* background.jpg */; };
+		84944F5D187C0ABB00B10401 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5B187C0ABB00B10401 /* background.jpg */; };
+		84944F5F187C0ADE00B10401 /* email-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5E187C0ADE00B10401 /* email-7.png */; };
+		84944F60187C0ADE00B10401 /* email-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5E187C0ADE00B10401 /* email-7.png */; };
+		84944F62187C0B1200B10401 /* man-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F61187C0B1200B10401 /* man-7.png */; };
+		84944F63187C0B1200B10401 /* man-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F61187C0B1200B10401 /* man-7.png */; };
+		84944F65187C0B2600B10401 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F64187C0B2600B10401 /* list-star-7.png */; };
+		84944F66187C0B2600B10401 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F64187C0B2600B10401 /* list-star-7.png */; };
 		8497F4401876B055004E4DF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497F43F1876B055004E4DF8 /* Foundation.framework */; };
 		8497F4421876B055004E4DF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497F4411876B055004E4DF8 /* CoreGraphics.framework */; };
 		8497F4441876B055004E4DF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497F4431876B055004E4DF8 /* UIKit.framework */; };
@@ -20,15 +29,9 @@
 		8497F4631876B056004E4DF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8497F4611876B056004E4DF8 /* InfoPlist.strings */; };
 		8497F4651876B056004E4DF8 /* Twitter_client_v2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497F4641876B056004E4DF8 /* Twitter_client_v2_0Tests.m */; };
 		8497F4701876B1FF004E4DF8 /* VSStartScreenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497F46F1876B1FF004E4DF8 /* VSStartScreenController.m */; };
-		8497F4741876B21B004E4DF8 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8497F4711876B21B004E4DF8 /* background.jpg */; };
 		84990D00187982A300A67AA8 /* VSMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84990CFE187982A300A67AA8 /* VSMainPageViewController.m */; };
 		84990D01187982A300A67AA8 /* VSMainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84990CFF187982A300A67AA8 /* VSMainPageViewController.xib */; };
-		84990D0318798EB600A67AA8 /* email-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84990D0218798EB600A67AA8 /* email-7.png */; };
-		84990D0518798ECC00A67AA8 /* home-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84990D0418798ECC00A67AA8 /* home-7.png */; };
-		84990D0718798EE200A67AA8 /* man-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84990D0618798EE200A67AA8 /* man-7.png */; };
-		84990D09187995EB00A67AA8 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84990D08187995EB00A67AA8 /* list-star-7.png */; };
 		849B092E1876F25D00F268B0 /* VSStartScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849B092D1876F25D00F268B0 /* VSStartScreenController.xib */; };
-		849B093018771CA700F268B0 /* twitter_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 849B092F18771CA700F268B0 /* twitter_logo.jpg */; };
 		849FB1E6187878C600F880B0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FB1E5187878C600F880B0 /* Accounts.framework */; };
 		849FB1E8187878D900F880B0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FB1E7187878D900F880B0 /* Social.framework */; };
 		849FB1EA187878EA00F880B0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FB1E9187878EA00F880B0 /* Twitter.framework */; };
@@ -47,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84944F59187C0AAE00B10401 /* twitter_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twitter_logo.jpg; sourceTree = "<group>"; };
+		84944F5B187C0ABB00B10401 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		84944F5E187C0ADE00B10401 /* email-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-7.png"; sourceTree = "<group>"; };
+		84944F61187C0B1200B10401 /* man-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-7.png"; sourceTree = "<group>"; };
+		84944F64187C0B2600B10401 /* list-star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-star-7.png"; sourceTree = "<group>"; };
 		8497F43C1876B055004E4DF8 /* Twitter_client_v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter_client_v2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8497F43F1876B055004E4DF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8497F4411876B055004E4DF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,17 +72,11 @@
 		8497F4621876B056004E4DF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8497F4641876B056004E4DF8 /* Twitter_client_v2_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Twitter_client_v2_0Tests.m; sourceTree = "<group>"; };
 		8497F46F1876B1FF004E4DF8 /* VSStartScreenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSStartScreenController.m; sourceTree = "<group>"; };
-		8497F4711876B21B004E4DF8 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		84990CFD187982A300A67AA8 /* VSMainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSMainPageViewController.h; sourceTree = "<group>"; };
 		84990CFE187982A300A67AA8 /* VSMainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSMainPageViewController.m; sourceTree = "<group>"; };
 		84990CFF187982A300A67AA8 /* VSMainPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSMainPageViewController.xib; sourceTree = "<group>"; };
-		84990D0218798EB600A67AA8 /* email-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "email-7.png"; path = "../../../../Downloads/iconbeast-lite-7/iconbeast lite 7 - png/email-7.png"; sourceTree = "<group>"; };
-		84990D0418798ECC00A67AA8 /* home-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-7.png"; path = "../../../../Downloads/iconbeast-lite-7/iconbeast lite 7 - png/home-7.png"; sourceTree = "<group>"; };
-		84990D0618798EE200A67AA8 /* man-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "man-7.png"; path = "../../../../Downloads/iconbeast-lite-7/iconbeast lite 7 - png/man-7.png"; sourceTree = "<group>"; };
-		84990D08187995EB00A67AA8 /* list-star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list-star-7.png"; path = "../../../../Downloads/iconbeast-lite-7/iconbeast lite 7 - png/list-star-7.png"; sourceTree = "<group>"; };
 		849B092C1876EBC500F268B0 /* VSStartScreenController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSStartScreenController.h; sourceTree = "<group>"; };
 		849B092D1876F25D00F268B0 /* VSStartScreenController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSStartScreenController.xib; sourceTree = "<group>"; };
-		849B092F18771CA700F268B0 /* twitter_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twitter_logo.jpg; sourceTree = "<group>"; };
 		849FB1E5187878C600F880B0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		849FB1E7187878D900F880B0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		849FB1E9187878EA00F880B0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -166,12 +168,11 @@
 			isa = PBXGroup;
 			children = (
 				8497F4471876B055004E4DF8 /* Twitter_client_v2.0-Info.plist */,
-				8497F4711876B21B004E4DF8 /* background.jpg */,
-				84990D0218798EB600A67AA8 /* email-7.png */,
-				84990D0618798EE200A67AA8 /* man-7.png */,
-				84990D0418798ECC00A67AA8 /* home-7.png */,
-				84990D08187995EB00A67AA8 /* list-star-7.png */,
-				849B092F18771CA700F268B0 /* twitter_logo.jpg */,
+				84944F5B187C0ABB00B10401 /* background.jpg */,
+				84944F59187C0AAE00B10401 /* twitter_logo.jpg */,
+				84944F5E187C0ADE00B10401 /* email-7.png */,
+				84944F61187C0B1200B10401 /* man-7.png */,
+				84944F64187C0B2600B10401 /* list-star-7.png */,
 				8497F4511876B056004E4DF8 /* Images.xcassets */,
 				8497F4481876B055004E4DF8 /* InfoPlist.strings */,
 				8497F44B1876B055004E4DF8 /* main.m */,
@@ -274,17 +275,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84990D0518798ECC00A67AA8 /* home-7.png in Resources */,
-				8497F4741876B21B004E4DF8 /* background.jpg in Resources */,
+				84944F62187C0B1200B10401 /* man-7.png in Resources */,
 				8497F44A1876B055004E4DF8 /* InfoPlist.strings in Resources */,
-				84990D0318798EB600A67AA8 /* email-7.png in Resources */,
-				84990D09187995EB00A67AA8 /* list-star-7.png in Resources */,
-				84990D0718798EE200A67AA8 /* man-7.png in Resources */,
-				849B093018771CA700F268B0 /* twitter_logo.jpg in Resources */,
 				8497F4521876B056004E4DF8 /* Images.xcassets in Resources */,
+				84944F5F187C0ADE00B10401 /* email-7.png in Resources */,
+				84944F5C187C0ABB00B10401 /* background.jpg in Resources */,
+				84944F5A187C0AAE00B10401 /* twitter_logo.jpg in Resources */,
 				84990D01187982A300A67AA8 /* VSMainPageViewController.xib in Resources */,
 				849B092E1876F25D00F268B0 /* VSStartScreenController.xib in Resources */,
 				84AB9DB8187B143900E46F6A /* VSTweetsListViewController.xib in Resources */,
+				84944F65187C0B2600B10401 /* list-star-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +292,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84944F63187C0B1200B10401 /* man-7.png in Resources */,
 				8497F4631876B056004E4DF8 /* InfoPlist.strings in Resources */,
+				84944F5D187C0ABB00B10401 /* background.jpg in Resources */,
+				84944F60187C0ADE00B10401 /* email-7.png in Resources */,
+				84944F66187C0B2600B10401 /* list-star-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
