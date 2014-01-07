@@ -7,6 +7,7 @@
 //
 
 #import "VSAppDelegate.h"
+#import "VSStartScreenController.h"
 
 @implementation VSAppDelegate
 
@@ -14,10 +15,20 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    VSStartScreenController *MainViewController = [ [VSStartScreenController alloc] init ];
+    
+    UINavigationController *navigator = [ [UINavigationController alloc] init];//(first controller)
+    navigator.navigationBar.translucent = NO;
+    
+    [navigator pushViewController:MainViewController animated:YES];
+    self.window.rootViewController = navigator;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -27,7 +38,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

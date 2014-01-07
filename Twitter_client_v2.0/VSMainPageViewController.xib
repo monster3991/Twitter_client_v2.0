@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VSMainPageViewController">
+            <connections>
+                <outlet property="buttonSendTweetReference" destination="W8f-03-joq" id="dG9-Mg-SeA"/>
+                <outlet property="countSymbols" destination="dPy-kJ-Cyr" id="nae-3g-4bn"/>
+                <outlet property="folowerButtonReference" destination="yWq-U9-Fzr" id="B4e-be-nQJ"/>
+                <outlet property="folowingButtonReference" destination="BcW-Tk-J5x" id="kKv-up-ZHq"/>
+                <outlet property="fullName" destination="Gr7-s6-RMi" id="sej-Dq-sYy"/>
+                <outlet property="hacheName" destination="xSh-r5-JQS" id="4VL-Sw-hfQ"/>
+                <outlet property="loadingIndicator" destination="OGM-LZ-1GV" id="wTE-nm-Dod"/>
+                <outlet property="tabBar" destination="Gsh-QN-LL5" id="BiK-pU-JkX"/>
+                <outlet property="textView" destination="eEa-n9-kGE" id="bKA-u3-b2B"/>
+                <outlet property="tweetList" destination="PwD-iI-A7A" id="nOE-pw-iFc"/>
+                <outlet property="tweetsButtonReference" destination="fOg-cR-BWS" id="Unp-Be-wfX"/>
+                <outlet property="usersAvatar" destination="IqT-s1-I9Q" id="aEb-xE-UIf"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tabBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Gsh-QN-LL5">
+                    <rect key="frame" x="0.0" y="455" width="320" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.1540516649" green="1" blue="0.1613135879" alpha="1" colorSpace="calibratedRGB"/>
+                    <items>
+                        <tabBarItem title="Messages" image="email-7.png" id="ivr-HJ-dWk" userLabel="df"/>
+                        <tabBarItem title="Home" image="home-7.png" id="AwA-3T-GMD"/>
+                        <tabBarItem title="Tweets list" image="list-star-7.png" id="PwD-iI-A7A"/>
+                    </items>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" red="0.0" green="0.47194343065693428" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="selectedImageTintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                </tabBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="IqT-s1-I9Q">
+                    <rect key="frame" x="20" y="20" width="100" height="100"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gr7-s6-RMi">
+                    <rect key="frame" x="150" y="20" width="134" height="66"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="fOg-cR-BWS">
+                    <rect key="frame" x="13" y="158" width="87" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.16825552520000001" green="0.4675054085" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="tw" backgroundImage="background.jpg">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="BcW-Tk-J5x">
+                    <rect key="frame" x="115" y="158" width="90" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.16825552520000001" green="0.4675054085" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                    <color key="tintColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="tw" backgroundImage="background.jpg">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="yWq-U9-Fzr">
+                    <rect key="frame" x="220" y="158" width="87" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.16825552520000001" green="0.4675054085" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Folower" backgroundImage="background.jpg">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSh-r5-JQS">
+                    <rect key="frame" x="150" y="87" width="142" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="OGM-LZ-1GV">
+                    <rect key="frame" x="150" y="242" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Compose new Tweet..." id="eEa-n9-kGE">
+                    <rect key="frame" x="20" y="250" width="280" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.0" green="0.67450980392156867" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
+                </textView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dPy-kJ-Cyr">
+                    <rect key="frame" x="220" y="326" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.67450980392156867" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W8f-03-joq">
+                    <rect key="frame" x="261" y="363" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Send" backgroundImage="background.jpg">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="sendTweet:" destination="-1" eventType="touchUpInside" id="Ej7-qK-x2p"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="0.0" green="0.67629447992700731" blue="0.93171190693430661" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background.jpg" width="320" height="568"/>
+        <image name="email-7.png" width="30" height="30"/>
+        <image name="home-7.png" width="30" height="30"/>
+        <image name="list-star-7.png" width="30" height="30"/>
+    </resources>
+</document>
