@@ -1,21 +1,21 @@
 //
-//  VSTweetsListViewController.m
+//  VSPersonTweetsListViewController.m
 //  Twitter_client_v2.0
 //
-//  Created by Admin on 06.01.14.
+//  Created by Admin on 09.01.14.
 //  Copyright (c) 2014 Admin. All rights reserved.
 //
 
-#import "VSTweetsListViewController.h"
+#import "VSPersonTweetsListViewController.h"
+#import "VSPersonPageViewController.h"
 #import "VSMainPageViewController.h"
 #import "VSCellView.h"
-#import "VSPersonPageViewController.h"
 
-@interface VSTweetsListViewController ()
+@interface VSPersonTweetsListViewController ()
 
 @end
 
-@implementation VSTweetsListViewController
+@implementation VSPersonTweetsListViewController
 
 @synthesize tableViewReference;
 @synthesize dictListFromJson;
@@ -23,7 +23,7 @@
 
 - (id)init
 {
-    self = [super initWithNibName:@"VSTweetsListViewController" bundle:nil];
+    self = [super initWithNibName:@"VSPersonTweetsListViewController" bundle:nil];
     if (self) {
         // Custom initialization
     }
@@ -58,12 +58,17 @@
 
 -(void)getData
 {
+
     VSMainPageViewController *userPage = [[self.navigationController viewControllers] objectAtIndex:(1)];
+    NSLog(@"hacheName = %@",userPage.hacheName.text);
+    VSPersonPageViewController *userPageCustom = [[self.navigationController viewControllers] objectAtIndex:([[self.navigationController viewControllers] count]-2)];
+    
     [userPage.accountStore requestAccessToAccountsWithType:userPage.typeTwitter options:nil completion:^(BOOL granted, NSError *error){
         if (granted) {
             NSMutableDictionary *param =[[NSMutableDictionary alloc]init];
             [param setObject:@"100" forKey:@"count"];
-            [param setObject:@"1" forKey:@"include_entities"];
+            //[param setObject:@"1" forKey:@"include_entities"];
+            [param setObject:userPageCustom.hacheName.text forKey:@"screen_name"];
             
             NSURL *requestAPI;
             //composing request
@@ -109,6 +114,7 @@
     if (cell == nil)
     {
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"VSCellView" owner:nil options:nil];
+        //cell = [[VSCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         NSLog(@"create cell");
         cell = [[VSCellView alloc] init];
         for(id currentObject in topLevelObjects )
@@ -141,6 +147,8 @@
         CGRect size = [str boundingRectWithSize:contrainSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} context:nil];
         cell.tweetMessage.frame = CGRectMake(/*cell.tweetMessage.frame.origin.x, cell.tweetMessage.frame.origin.y,*/20, 70, cell.tweetMessage.frame.size.width - 40, size.size.height);
         
+        //cell.frame = CGRectMake(0, 0, 320, cell.tweetMessage.frame.origin.y + textViewSize.height + 14);
+        
         NSURL *image = [NSURL URLWithString:usersCurrentDict[@"profile_image_url_https"]];
         cell.avatar.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:image]];
     }
@@ -159,7 +167,7 @@
     CGSize contrainSize = CGSizeMake(280, MAXFLOAT);//280 is width of the screen
     CGRect size = [str boundingRectWithSize:contrainSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17.0f]} context:nil];
     return size.size.height + 84;
-
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -175,39 +183,36 @@
     {
         NSDictionary *usersCurrentDict = dictListFromJson[indexPath.row];
         NSDictionary *usersCurrent = usersCurrentDict[@"user"];
-        id prelastVC = [[self.navigationController viewControllers] objectAtIndex:([[self.navigationController viewControllers] count] - 2)];
-        if( [usersCurrent[@"screen_name"] isEqualToString:[[prelastVC hacheName] text]])
-            [self.navigationController popViewControllerAnimated:YES];
-        else
-        {
-    if([[dictListFromJson[indexPath.row] valueForKey:@"screen_name"] isEqualToString:userPage.hacheName.text] )
-    {
-        NSLog(@"didSelect: %@",userPage.hacheName.text);
-        if(indexPath.row < dictListFromJson.count)
-        {
-            VSMainPageViewController *page;
-            if(!page)
+        
+       
+            if([[dictListFromJson[indexPath.row] valueForKey:@"screen_name"] isEqualToString:userPage.hacheName.text] )
             {
-                page = [[VSMainPageViewController alloc] init];
+                NSLog(@"didSelect: %@",userPage.hacheName.text);
+                if(indexPath.row < dictListFromJson.count)
+                {
+                    VSMainPageViewController *page;
+                    if(!page)
+                    {
+                        page = [[VSMainPageViewController alloc] init];
+                    }
+                    [self.navigationController pushViewController:page animated:YES];
+                }
             }
-            [self.navigationController pushViewController:page animated:YES];
-        }
-    }
-    else
-    {
-        NSLog(@"didSelect: %@",userPage.hacheName.text);
-        if(indexPath.row < dictListFromJson.count)
-        {
-            VSPersonPageViewController *page;
-            if(!page)
+            else
             {
-                page = [[VSPersonPageViewController alloc] init];
-            }
+                NSLog(@"didSelect: %@",userPage.hacheName.text);
+                if(indexPath.row < dictListFromJson.count)
+                {
+                    VSPersonPageViewController *page;
+                    if(!page)
+                    {
+                        page = [[VSPersonPageViewController alloc] init];
+                    }
+                    
+                    page.personName = usersCurrent[@"screen_name"];
+                    [self.navigationController pushViewController:page animated:YES];
+                }
             
-            page.personName = usersCurrent[@"screen_name"];
-            [self.navigationController pushViewController:page animated:YES];
-        }
-    }
         }
     }
 }

@@ -7,20 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
 #import "VSMainPageViewController.h"
 
 @interface VSStartScreenController : UIViewController <UIViewControllerTransitioningDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
-@property (weak, nonatomic) IBOutlet UITextField *loginField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 
 @property (strong, nonatomic) VSMainPageViewController *mainViewController;
+@property (strong,nonatomic) ACAccountStore *accountStore;
+@property (strong,nonatomic) ACAccountType *accountType;
 
-- (IBAction)setCursorToPasswdField:(id)sender;
-- (IBAction)goAction:(id)sender;
 
 -(id)init;
 - (IBAction)authorized:(id)sender;

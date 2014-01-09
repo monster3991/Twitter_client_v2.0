@@ -1,73 +1,50 @@
 //
-//  VSMainPageViewController.m
+//  VSPersonPageViewController.m
 //  Twitter_client_v2.0
 //
-//  Created by Admin on 05.01.14.
+//  Created by Admin on 09.01.14.
 //  Copyright (c) 2014 Admin. All rights reserved.
 //
 
+#import "VSPersonPageViewController.h"
 #import "VSMainPageViewController.h"
 
-@interface VSMainPageViewController ()
+@interface VSPersonPageViewController ()
 
 @end
 
-@implementation VSMainPageViewController
+@implementation VSPersonPageViewController
 
 @synthesize tabBar;
-@synthesize accountStore;
-@synthesize typeTwitter;
 @synthesize activeAccount;
 @synthesize dictionary;
 @synthesize usersAvatar, fullName, hacheName, tweetsButtonReference, folowerButtonReference, folowingButtonReference, loadingIndicator;
-@synthesize countSymbols, buttonSendTweetReference, tweetList, listViewController, listPeopleViewController,homeButton, infoButton;
+@synthesize countSymbols, buttonSendMessageReference, tweetList, listViewController, listPeopleViewController,personName,accountStore,typeTwitter, homeButton, infoButton;
+
+VSMainPageViewController *userPage;
 
 - (id)init
 {
-    self = [super initWithNibName:@"VSMainPageViewController" bundle:nil];
+    self = [super initWithNibName:@"VSPersonPageViewController" bundle:nil];
     if (self) {
         // Custom initialization
-        
-        NSLog(@"init MainPage");        
     }
     return self;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    userPage = [[self.navigationController viewControllers] objectAtIndex:(1)];
+    accountStore = userPage.accountStore;
+    typeTwitter = userPage.typeTwitter;
+    activeAccount = userPage.activeAccount;
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self buttonsSettingsDefault];
     
     [self hideAllElemnts];
-    
-    
-    accountStore = [[ACAccountStore alloc] init];
-    typeTwitter = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    [accountStore requestAccessToAccountsWithType:typeTwitter options:nil completion:^(BOOL granted, NSError *error){
-        if (granted) {
-            NSArray *accounts = [accountStore accountsWithAccountType:typeTwitter];
-            if(accounts.count == 0)
-            {
-                UIAlertView *needAccount = [[UIAlertView alloc]initWithTitle:@"No connection"
-                                                                     message:@"Please, create an account in the settings"
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil];
-                [needAccount show];
-            }
-            else
-            {
-            activeAccount = [[ACAccount alloc] init];
-            activeAccount = [accounts objectAtIndex:(accounts.count -1)];
-            [self loadDataFromService];
-            }
-        }
-        else{
-            NSLog(@"WTF");
-        }
-    }];
+    [self loadDataFromService];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -86,7 +63,7 @@
     [[_textView layer] setBorderWidth:3.0f];
     _textView.layer.borderColor = [UIColor colorWithRed:0.73 green:0.73 blue:0.73 alpha:0.5].CGColor;
     _textView.layer.cornerRadius = 10.0f;
-    _textView.text = @"Compose new Tweet...";
+    _textView.text = @"Send message...";
     _textView.textColor = [UIColor lightGrayColor];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -118,8 +95,7 @@
     
     [accountStore requestAccessToAccountsWithType:typeTwitter options:nil completion:^(BOOL granted, NSError *error){
         if (granted) {
-            NSString *userName = activeAccount.username;
-            NSDictionary *options =[NSDictionary dictionaryWithObject:userName forKey:@"screen_name"];
+            NSDictionary *options =[NSDictionary dictionaryWithObject:personName forKey:@"screen_name"];
             
             NSURL *requestAPI = [NSURL URLWithString:@"https://api.twitter.com/1.1/users/show.json"];
             
@@ -164,16 +140,6 @@
                         [loadingIndicator stopAnimating];
                         loadingIndicator.hidden = YES;
                         _textView.hidden = NO;
-                        
-                        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                        [userDefaults setObject:fullName.text forKey:@"fullName"];
-                        [userDefaults setObject:hacheName.text forKey:@"hacheName"];
-                        [userDefaults setInteger:[[dictionary objectForKey:@"followers_count"] integerValue] forKey:@"followerCount"];
-                        [userDefaults setInteger:[[dictionary objectForKey:@"friends_count"]integerValue] forKey:@"followingCount"];
-                        [userDefaults setInteger:[[dictionary objectForKey:@"statuses_count"]integerValue] forKey:@"tweetsCount"];
-                        [userDefaults synchronize];
-                        NSLog(@"FINISH");
-                        [userDefaults setObject:UIImagePNGRepresentation(usersAvatar.image) forKey:@"image"];
                     }
                 });
             }];
@@ -200,7 +166,7 @@
     loadingIndicator.hidden = NO;
     [loadingIndicator startAnimating];
     countSymbols.hidden = YES;
-    buttonSendTweetReference.hidden = YES;
+    buttonSendMessageReference.hidden = YES;
 }
 
 -(void)viewWillLayoutSubviews
@@ -210,11 +176,11 @@
         NSLog(@"Landscape main screen");//big small
         
         /*usersAvatar.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
-        fullName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
-        hacheName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
-        tweetsButtonReference.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
-        folowerButtonReference.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
-        folowingButtonReference.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);*/
+         fullName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+         hacheName.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+         tweetsButtonReference.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+         folowerButtonReference.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+         folowingButtonReference.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);*/
         loadingIndicator.frame = CGRectMake(274, 118, 20, 20);
         tabBar.frame = CGRectMake(0, 219, 568, 49);
     }
@@ -271,11 +237,11 @@
         [view resignFirstResponder];
 }
 
-- (IBAction)sendTweet:(id)sender
+- (IBAction)sendMessage:(id)sender
 {
     
-    NSString *tweetText = _textView.text.copy;
-    NSLog(@"%@",tweetText);
+    NSString *messageText = _textView.text.copy;
+    NSLog(@"%@",messageText);
     _textView.text = @"";
     //not neccesary if all clear, but something was wrong.... we take an error code
     SLRequestHandler requestHandler =
@@ -295,7 +261,7 @@
                 NSLog(@"ERROR: error code: %d %@", statusCode,
                       [NSHTTPURLResponse localizedStringForStatusCode:statusCode]);
                 UIAlertView *needAccount = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                                     message:@"The tweet hasn't been sent"
+                                                                     message:@"The message hasn't been sent"
                                                                     delegate:self
                                                            cancelButtonTitle:@"OK"
                                                            otherButtonTitles:nil];
@@ -303,9 +269,9 @@
             }
         }
         else {
-            NSLog(@"[ERROR] An error occurred while posting: %@", [error localizedDescription]);
+            NSLog(@"[ERROR] An error occurred while sending message: %@", [error localizedDescription]);
             UIAlertView *needAccount = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                                 message:@"The tweet hasn't been sent"
+                                                                 message:@"The message hasn't been sent"
                                                                 delegate:self
                                                        cancelButtonTitle:@"OK"
                                                        otherButtonTitles:nil];
@@ -313,30 +279,31 @@
         }
     };
     
-        ACAccountStoreRequestAccessCompletionHandler accountStoreHandler =
-        ^(BOOL granted, NSError *error) {
-            if (granted) {
-                NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/update.json"];
-                NSDictionary *params = @ {@"status" : tweetText};
-                SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                                        requestMethod:SLRequestMethodPOST
-                                                                  URL:url
-                                                           parameters:params];
-                [request setAccount:activeAccount];
-                [request setAccessibilityValue:@"1"];
-                [request performRequestWithHandler:requestHandler];
-            }
-            else {
-                NSLog(@"[ERROR] An error occurred while asking for user authorization: %@",
-                      [error localizedDescription]);
-            }
-        };
-        
-        [accountStore requestAccessToAccountsWithType:typeTwitter
-                                              options:NULL
-                                           completion:accountStoreHandler];
+    ACAccountStoreRequestAccessCompletionHandler accountStoreHandler =
+    ^(BOOL granted, NSError *error) {
+        if (granted) {
+            NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/direct_messages/new.json"];
+            NSDictionary *params = @ {@"screen_name":personName,@"text" : messageText};
+            NSLog(@"name = %@",personName);
+            SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                    requestMethod:SLRequestMethodPOST
+                                                              URL:url
+                                                       parameters:params];
+            [request setAccount:activeAccount];
+            [request setAccessibilityValue:@"1"];
+            [request performRequestWithHandler:requestHandler];
+        }
+        else {
+            NSLog(@"[ERROR] An error occurred while asking for user authorization: %@",
+                  [error localizedDescription]);
+        }
+    };
+    
+    [accountStore requestAccessToAccountsWithType:typeTwitter
+                                          options:NULL
+                                       completion:accountStoreHandler];
     countSymbols.text = @"140";
-
+    
 }
 
 
@@ -367,7 +334,7 @@
 {
     _textView.layer.borderColor = [UIColor colorWithRed:0 green:0.68 blue:0.93 alpha:1].CGColor;
     
-    if([textView.text isEqual:@"Compose new Tweet..."] && [textView.textColor isEqual:[UIColor lightGrayColor]])
+    if([textView.text isEqual:@"Send message..."] && [textView.textColor isEqual:[UIColor lightGrayColor]])
         textView.text = @"";
     textView.textColor = [UIColor blackColor];
     if(UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
@@ -377,16 +344,16 @@
     {
         _textView.frame = CGRectMake(_textView.frame.origin.x, _textView.frame.origin.y, 280, 130);
         countSymbols.frame = CGRectMake(_textView.frame.origin.x + 180, _textView.frame.origin.y + 140, 30, 20);
-        buttonSendTweetReference.frame = CGRectMake(countSymbols.frame.origin.x + 60, countSymbols.frame.origin.y, 50, 25);
-        buttonSendTweetReference.layer.cornerRadius = 10;
+        buttonSendMessageReference.frame = CGRectMake(countSymbols.frame.origin.x + 60, countSymbols.frame.origin.y, 50, 25);
+        buttonSendMessageReference.layer.cornerRadius = 10;
         countSymbols.text = [NSString stringWithFormat:@"%d", 140 - _textView.text.length];
     }
     countSymbols.hidden = NO;
-    buttonSendTweetReference.hidden = NO;
+    buttonSendMessageReference.hidden = NO;
     if(textView.text.length == 0)
-        buttonSendTweetReference.enabled = NO;
+        buttonSendMessageReference.enabled = NO;
     else
-        buttonSendTweetReference.enabled = YES;
+        buttonSendMessageReference.enabled = YES;
     return YES;
 }
 
@@ -395,12 +362,12 @@
     countSymbols.text = [NSString stringWithFormat:@"%d", 140 - _textView.text.length];
     if(textView.text.length == 0){
         /*textView.textColor = [UIColor lightGrayColor];
-        textView.text = @"Compose new Tweet...";
-        [textView resignFirstResponder];*/
-        buttonSendTweetReference.enabled = NO;
+         textView.text = @"Compose new Tweet...";
+         [textView resignFirstResponder];*/
+        buttonSendMessageReference.enabled = NO;
     }
     else
-        buttonSendTweetReference.enabled = YES;
+        buttonSendMessageReference.enabled = YES;
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
@@ -408,7 +375,7 @@
     _textView.layer.borderColor = [UIColor colorWithRed:0.73 green:0.73 blue:0.73 alpha:0.5].CGColor;
     if(textView.text.length == 0){
         textView.textColor = [UIColor lightGrayColor];
-        textView.text = @"Compose new Tweet...";
+        textView.text = @"Send message...";
         [textView resignFirstResponder];
     }
     if(UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
@@ -417,7 +384,7 @@
     else
         _textView.frame = CGRectMake(_textView.frame.origin.x, _textView.frame.origin.y, 280, 34);
     countSymbols.hidden = YES;
-    buttonSendTweetReference.hidden = YES;
+    buttonSendMessageReference.hidden = YES;
 }
 
 -(BOOL)textView:(UITextView*)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -435,35 +402,36 @@
     {
         if ( !listViewController )
         {
-            listViewController = [ [ VSTweetsListViewController alloc ] init ];
+            listViewController = [ [ VSPersonTweetsListViewController alloc ] init ];
         }
         listViewController.objectType = @"tweetsList";
         [self.navigationController pushViewController:listViewController animated:YES];
     }
     else
-    {
         if([item isEqual:homeButton])
         {
-            ;
+            VSMainPageViewController *mainPage;
+            if(!mainPage)
+                mainPage = [[VSMainPageViewController alloc] init];
+            [self.navigationController pushViewController:mainPage animated:YES];
         }
-        else
-            if([item isEqual:infoButton])
-            {
-                UIAlertView *needAccount = [[UIAlertView alloc]initWithTitle:@"Info"
-                                                                     message:@"Twitter client v1.0\n\nFeatures:\n1. User profile\n2. User tweets\n3. User followers list\n4. List of users following the user\n5. Common tweets list (feednews)\n6. Posting tweets\n7. Sending private messages\n8. Infinite navigation stack depth\n9. Authenication via account set up at iOS Settings\n\nAuthor: Snagovskoy Vladislav aka monster3991\n\nCreated due the project of speccourse at CMC MSU\nteached by Kononov Alexey & Vorontsov Yuriy"
-                                                                    delegate:self
-                                                           cancelButtonTitle:@"OK"
-                                                           otherButtonTitles:nil];
-                [needAccount show];
-            }
-    }
+    else
+        if([item isEqual:infoButton])
+        {
+            UIAlertView *needAccount = [[UIAlertView alloc]initWithTitle:@"Info"
+                                                                 message:@"Twitter client v1.0\n\nFeatures:\n1. User profile\n2. User tweets\n3. User followers list\n4. List of users following the user\n5. Common tweets list (feednews)\n6. Posting tweets\n7. Sending private messages\n8. Infinite navigation stack depth\n9. Authenication via account set up at iOS Settings\n\nAuthor: Snagovskoy Vladislav aka monster3991\n\nCreated due the project of speccourse at CMC MSU\nteached by Kononov Alexey & Vorontsov Yuriy"
+                                                                delegate:self
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+            [needAccount show];
+        }
 }
 
-- (IBAction)myTweetsList:(id)sender
+- (IBAction)personTweetsList:(id)sender
 {
     if ( !listViewController )
     {
-        listViewController = [ [ VSTweetsListViewController alloc ] init ];
+        listViewController = [ [ VSPersonTweetsListViewController alloc ] init ];
     }
     listViewController.objectType = @"myTweetsList";
     [self.navigationController pushViewController:listViewController animated:YES];
@@ -473,7 +441,7 @@
 {
     if ( !listPeopleViewController )
     {
-        listPeopleViewController = [ [ VSPeopleListViewController alloc ] init ];
+        listPeopleViewController = [ [ VSPersonPeopleListViewController alloc ] init ];
     }
     listPeopleViewController.objectType = @"folowingList";
     [self.navigationController pushViewController:listPeopleViewController animated:YES];
@@ -483,11 +451,10 @@
 {
     if ( !listPeopleViewController )
     {
-        listPeopleViewController = [ [ VSPeopleListViewController alloc ] init ];
+        listPeopleViewController = [ [ VSPersonPeopleListViewController alloc ] init ];
     }
     listPeopleViewController.objectType = @"folowersList";
     [self.navigationController pushViewController:listPeopleViewController animated:YES];
 }
-
 
 @end

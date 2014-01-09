@@ -15,9 +15,7 @@
 @implementation VSStartScreenController
 
 @synthesize logoImage;
-@synthesize loginField;
-@synthesize passwordField;
-@synthesize signInButton;
+@synthesize signInButton,accountStore,accountType;
 
 @synthesize mainViewController;
 
@@ -54,11 +52,7 @@
         NSLog(@"Landscape main screen");//big small
         
         logoImage.frame = CGRectMake(215, 20, 138, 115);
-        loginField.frame = CGRectMake(50, 150, 468, 40);
-        passwordField.frame = CGRectMake(50, 200, 468, 40);
         signInButton.frame = CGRectMake(50, 260, 468, 40);
-        loginField.alpha = 1.0f;
-        passwordField.alpha = 1.0f;
         signInButton.alpha = 1.0f;
     }
     else
@@ -67,8 +61,6 @@
         
         if( isTheFirstRun )
         {
-            loginField.frame = CGRectMake(55, 270, 210, 35);
-            passwordField.frame = CGRectMake(55, 320, 210, 35);
             signInButton.frame = CGRectMake(55, 390, 210, 35);
             [UIView animateWithDuration:1.0f delay:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
                 logoImage.center = CGPointMake(160, 284);
@@ -76,8 +68,7 @@
             } completion:^(BOOL finished){
                 if (finished)
                     [UIView animateWithDuration:2.0f delay:1.0f options:UIViewAnimationOptionCurveLinear animations:^{
-                        loginField.alpha = 1.0f;
-                        passwordField.alpha = 1.0f;
+
                         signInButton.alpha = 1.0f;
                     } completion:nil];
                 
@@ -87,8 +78,6 @@
         else
         {
             logoImage.frame = CGRectMake(91, 102.5f, 138, 115);
-            loginField.frame = CGRectMake(55, 270, 210, 35);
-            passwordField.frame = CGRectMake(55, 320, 210, 35);
             signInButton.frame = CGRectMake(55, 390, 210, 35);
         }
     }
@@ -99,8 +88,6 @@
     static BOOL isTheFirstRun = TRUE;
     if(isTheFirstRun)
     {
-        loginField.alpha = 0.0f;
-        passwordField.alpha = 0.0f;
         signInButton.alpha = 0.0f;
         signInButton.layer.cornerRadius = 10;
         isTheFirstRun = FALSE;
@@ -117,6 +104,14 @@
 {
     [super viewDidLoad];
     self.view.userInteractionEnabled = TRUE;
+    accountStore = [[ACAccountStore alloc] init];
+    accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    if(!accountStore)
+    {
+        accountStore = [[ACAccountStore alloc] init];
+        accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -154,38 +149,46 @@
 }
 
 
-- (IBAction)setCursorToPasswdField:(id)sender
-{
-    [passwordField becomeFirstResponder];
-}
-
-- (IBAction)goAction:(id)sender
-{
-    
-}
 
 -(IBAction)authorized:(id)sender
 {
-    /*NSLog(@"Authorization");
-    [[UIApplication sharedApplication]setNetworkActivityIndicatorVisible:YES];
-    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    
-    [accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
+    BOOL __block grantedAccess = TRUE;
+    /*[accountStore requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error){
         if (granted) {
             NSArray *accounts = [accountStore accountsWithAccountType:accountType];
-            ACAccount *twitterAccount = [accounts objectAtIndex:0];
-            NSString *str = twitterAccount.username;
-            NSLog(@"USERNAME = %@",str);
-            
-            
+            if( accounts.count == 0)
+            {
+                ;
+            }
+            else
+            {
+                
+                grantedAccess = TRUE;
+            }
         }
+        else
+        {
+            ;
+        }
+        
     }];*/
-    if ( !mainViewController )
+    if(grantedAccess)
     {
-        mainViewController = [ [ VSMainPageViewController alloc ] init ];
+        if ( !mainViewController )
+        {
+            mainViewController = [ [ VSMainPageViewController alloc ] init ];
+        }
+        [ self.navigationController pushViewController:mainViewController animated:YES ];
     }
-    [ self.navigationController pushViewController:mainViewController animated:YES ];
+    else
+    {
+        UIAlertView *needAccount = [[UIAlertView alloc]initWithTitle:@"No connection"
+                                                             message:@"Please, create an account in the settings"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles:nil];
+        [needAccount show];
+    }
 }
 
 - (void)didReceiveMemoryWarning

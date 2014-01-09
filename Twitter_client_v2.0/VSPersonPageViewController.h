@@ -1,8 +1,8 @@
 //
-//  VSMainPageViewController.h
+//  VSPersonPageViewController.h
 //  Twitter_client_v2.0
 //
-//  Created by Admin on 05.01.14.
+//  Created by Admin on 09.01.14.
 //  Copyright (c) 2014 Admin. All rights reserved.
 //
 
@@ -11,8 +11,11 @@
 #import <Accounts/Accounts.h>
 #import "VSTweetsListViewController.h"
 #import "VSPeopleListViewController.h"
+#import "VSPersonTweetsListViewController.h"
+#import "VSPersonPeopleListViewController.h"
 
-@interface VSMainPageViewController : UIViewController
+@interface VSPersonPageViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 @property (weak, nonatomic) IBOutlet UILabel *fullName;
@@ -28,23 +31,24 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *countSymbols;
 
-- (IBAction)sendTweet:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *buttonSendTweetReference;
+- (IBAction)sendMessage:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSendMessageReference;
 @property (weak, nonatomic) IBOutlet UITabBarItem *tweetList;
 @property (weak, nonatomic) IBOutlet UITabBarItem *homeButton;
 @property (weak, nonatomic) IBOutlet UITabBarItem *infoButton;
-- (IBAction)myTweetsList:(id)sender;
+- (IBAction)personTweetsList:(id)sender;
 - (IBAction)folowingList:(id)sender;
 - (IBAction)folowersList:(id)sender;
 
 
-@property (strong, nonatomic) ACAccountStore *accountStore;
-@property (strong, nonatomic) ACAccountType *typeTwitter;
 @property (strong, nonatomic) ACAccount *activeAccount;
 @property (strong, nonatomic) NSDictionary *dictionary;
 
-@property (strong, nonatomic) VSTweetsListViewController *listViewController;
-@property (strong, nonatomic) VSPeopleListViewController *listPeopleViewController;
+@property (strong, nonatomic) VSPersonTweetsListViewController *listViewController;
+@property (strong, nonatomic) VSPersonPeopleListViewController *listPeopleViewController;
+@property (strong, nonatomic) NSString *personName;
+@property(strong, nonatomic)ACAccountStore *accountStore;
+@property(strong, nonatomic) ACAccountType *typeTwitter;
 
 -(id) init;
 

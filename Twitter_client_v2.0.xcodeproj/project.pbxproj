@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8493DE07187F0E0E00ACB22D /* book-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8493DE06187F0E0E00ACB22D /* book-7.png */; };
 		84944F5A187C0AAE00B10401 /* twitter_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84944F59187C0AAE00B10401 /* twitter_logo.jpg */; };
 		84944F5C187C0ABB00B10401 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5B187C0ABB00B10401 /* background.jpg */; };
 		84944F5D187C0ABB00B10401 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5B187C0ABB00B10401 /* background.jpg */; };
-		84944F5F187C0ADE00B10401 /* email-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5E187C0ADE00B10401 /* email-7.png */; };
-		84944F60187C0ADE00B10401 /* email-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F5E187C0ADE00B10401 /* email-7.png */; };
-		84944F62187C0B1200B10401 /* man-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F61187C0B1200B10401 /* man-7.png */; };
-		84944F63187C0B1200B10401 /* man-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F61187C0B1200B10401 /* man-7.png */; };
-		84944F65187C0B2600B10401 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F64187C0B2600B10401 /* list-star-7.png */; };
-		84944F66187C0B2600B10401 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84944F64187C0B2600B10401 /* list-star-7.png */; };
+		84944F6D187C332D00B10401 /* VSCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84944F6C187C332D00B10401 /* VSCellView.m */; };
+		84944F6E187C332D00B10401 /* VSCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84944F6C187C332D00B10401 /* VSCellView.m */; };
+		84944F73187C34E300B10401 /* VSCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84944F72187C34E300B10401 /* VSCellView.xib */; };
+		84944F74187C34E300B10401 /* VSCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84944F72187C34E300B10401 /* VSCellView.xib */; };
+		849604AC187EC24B00824F24 /* VSPersonPeopleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849604AA187EC24B00824F24 /* VSPersonPeopleListViewController.m */; };
+		849604AD187EC24B00824F24 /* VSPersonPeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849604AB187EC24B00824F24 /* VSPersonPeopleListViewController.xib */; };
 		8497F4401876B055004E4DF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497F43F1876B055004E4DF8 /* Foundation.framework */; };
 		8497F4421876B055004E4DF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497F4411876B055004E4DF8 /* CoreGraphics.framework */; };
 		8497F4441876B055004E4DF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8497F4431876B055004E4DF8 /* UIKit.framework */; };
@@ -35,8 +36,17 @@
 		849FB1E6187878C600F880B0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FB1E5187878C600F880B0 /* Accounts.framework */; };
 		849FB1E8187878D900F880B0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FB1E7187878D900F880B0 /* Social.framework */; };
 		849FB1EA187878EA00F880B0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849FB1E9187878EA00F880B0 /* Twitter.framework */; };
+		84A03411187DCF33005581E7 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A03410187DCF33005581E7 /* list-star-7.png */; };
+		84A03412187DCF33005581E7 /* list-star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A03410187DCF33005581E7 /* list-star-7.png */; };
 		84AB9DB7187B143900E46F6A /* VSTweetsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9DB5187B143900E46F6A /* VSTweetsListViewController.m */; };
 		84AB9DB8187B143900E46F6A /* VSTweetsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AB9DB6187B143900E46F6A /* VSTweetsListViewController.xib */; };
+		84ADB76B187CB213006F458E /* VSPeopleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ADB769187CB213006F458E /* VSPeopleListViewController.m */; };
+		84ADB76C187CB213006F458E /* VSPeopleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ADB76A187CB213006F458E /* VSPeopleListViewController.xib */; };
+		84AEB656187DEF4F007DA5D2 /* home-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AEB655187DEF4F007DA5D2 /* home-7.png */; };
+		84AEB65A187DEF73007DA5D2 /* VSPersonPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AEB658187DEF73007DA5D2 /* VSPersonPageViewController.m */; };
+		84AEB65B187DEF73007DA5D2 /* VSPersonPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AEB659187DEF73007DA5D2 /* VSPersonPageViewController.xib */; };
+		84AEB65F187E1915007DA5D2 /* VSPersonTweetsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AEB65D187E1915007DA5D2 /* VSPersonTweetsListViewController.m */; };
+		84AEB660187E1915007DA5D2 /* VSPersonTweetsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AEB65E187E1915007DA5D2 /* VSPersonTweetsListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +60,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8493DE06187F0E0E00ACB22D /* book-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book-7.png"; sourceTree = "<group>"; };
 		84944F59187C0AAE00B10401 /* twitter_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twitter_logo.jpg; sourceTree = "<group>"; };
 		84944F5B187C0ABB00B10401 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		84944F5E187C0ADE00B10401 /* email-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email-7.png"; sourceTree = "<group>"; };
-		84944F61187C0B1200B10401 /* man-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "man-7.png"; sourceTree = "<group>"; };
-		84944F64187C0B2600B10401 /* list-star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-star-7.png"; sourceTree = "<group>"; };
+		84944F6B187C332D00B10401 /* VSCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSCellView.h; sourceTree = "<group>"; };
+		84944F6C187C332D00B10401 /* VSCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSCellView.m; sourceTree = "<group>"; };
+		84944F72187C34E300B10401 /* VSCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSCellView.xib; sourceTree = "<group>"; };
+		849604A9187EC24B00824F24 /* VSPersonPeopleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPersonPeopleListViewController.h; sourceTree = "<group>"; };
+		849604AA187EC24B00824F24 /* VSPersonPeopleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPersonPeopleListViewController.m; sourceTree = "<group>"; };
+		849604AB187EC24B00824F24 /* VSPersonPeopleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSPersonPeopleListViewController.xib; sourceTree = "<group>"; };
 		8497F43C1876B055004E4DF8 /* Twitter_client_v2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter_client_v2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8497F43F1876B055004E4DF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8497F4411876B055004E4DF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,9 +94,20 @@
 		849FB1E5187878C600F880B0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		849FB1E7187878D900F880B0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		849FB1E9187878EA00F880B0 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		84A03410187DCF33005581E7 /* list-star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-star-7.png"; sourceTree = "<group>"; };
 		84AB9DB4187B143900E46F6A /* VSTweetsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTweetsListViewController.h; sourceTree = "<group>"; };
 		84AB9DB5187B143900E46F6A /* VSTweetsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSTweetsListViewController.m; sourceTree = "<group>"; };
 		84AB9DB6187B143900E46F6A /* VSTweetsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSTweetsListViewController.xib; sourceTree = "<group>"; };
+		84ADB768187CB213006F458E /* VSPeopleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPeopleListViewController.h; sourceTree = "<group>"; };
+		84ADB769187CB213006F458E /* VSPeopleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPeopleListViewController.m; sourceTree = "<group>"; };
+		84ADB76A187CB213006F458E /* VSPeopleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSPeopleListViewController.xib; sourceTree = "<group>"; };
+		84AEB655187DEF4F007DA5D2 /* home-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-7.png"; sourceTree = "<group>"; };
+		84AEB657187DEF73007DA5D2 /* VSPersonPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPersonPageViewController.h; sourceTree = "<group>"; };
+		84AEB658187DEF73007DA5D2 /* VSPersonPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPersonPageViewController.m; sourceTree = "<group>"; };
+		84AEB659187DEF73007DA5D2 /* VSPersonPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSPersonPageViewController.xib; sourceTree = "<group>"; };
+		84AEB65C187E1915007DA5D2 /* VSPersonTweetsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPersonTweetsListViewController.h; sourceTree = "<group>"; };
+		84AEB65D187E1915007DA5D2 /* VSPersonTweetsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPersonTweetsListViewController.m; sourceTree = "<group>"; };
+		84AEB65E187E1915007DA5D2 /* VSPersonTweetsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSPersonTweetsListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,13 +177,28 @@
 				849B092C1876EBC500F268B0 /* VSStartScreenController.h */,
 				84990CFD187982A300A67AA8 /* VSMainPageViewController.h */,
 				84AB9DB4187B143900E46F6A /* VSTweetsListViewController.h */,
+				84ADB768187CB213006F458E /* VSPeopleListViewController.h */,
+				84944F6B187C332D00B10401 /* VSCellView.h */,
+				84AEB657187DEF73007DA5D2 /* VSPersonPageViewController.h */,
+				84AEB65C187E1915007DA5D2 /* VSPersonTweetsListViewController.h */,
+				849604A9187EC24B00824F24 /* VSPersonPeopleListViewController.h */,
 				8497F44F1876B056004E4DF8 /* VSAppDelegate.m */,
 				8497F46F1876B1FF004E4DF8 /* VSStartScreenController.m */,
 				84990CFE187982A300A67AA8 /* VSMainPageViewController.m */,
 				84AB9DB5187B143900E46F6A /* VSTweetsListViewController.m */,
+				84ADB769187CB213006F458E /* VSPeopleListViewController.m */,
+				84944F6C187C332D00B10401 /* VSCellView.m */,
+				84AEB658187DEF73007DA5D2 /* VSPersonPageViewController.m */,
+				84AEB65D187E1915007DA5D2 /* VSPersonTweetsListViewController.m */,
+				849604AA187EC24B00824F24 /* VSPersonPeopleListViewController.m */,
 				849B092D1876F25D00F268B0 /* VSStartScreenController.xib */,
 				84990CFF187982A300A67AA8 /* VSMainPageViewController.xib */,
 				84AB9DB6187B143900E46F6A /* VSTweetsListViewController.xib */,
+				84ADB76A187CB213006F458E /* VSPeopleListViewController.xib */,
+				84944F72187C34E300B10401 /* VSCellView.xib */,
+				84AEB659187DEF73007DA5D2 /* VSPersonPageViewController.xib */,
+				84AEB65E187E1915007DA5D2 /* VSPersonTweetsListViewController.xib */,
+				849604AB187EC24B00824F24 /* VSPersonPeopleListViewController.xib */,
 				8497F4461876B055004E4DF8 /* Supporting Files */,
 			);
 			path = Twitter_client_v2.0;
@@ -170,9 +210,9 @@
 				8497F4471876B055004E4DF8 /* Twitter_client_v2.0-Info.plist */,
 				84944F5B187C0ABB00B10401 /* background.jpg */,
 				84944F59187C0AAE00B10401 /* twitter_logo.jpg */,
-				84944F5E187C0ADE00B10401 /* email-7.png */,
-				84944F61187C0B1200B10401 /* man-7.png */,
-				84944F64187C0B2600B10401 /* list-star-7.png */,
+				84AEB655187DEF4F007DA5D2 /* home-7.png */,
+				84A03410187DCF33005581E7 /* list-star-7.png */,
+				8493DE06187F0E0E00ACB22D /* book-7.png */,
 				8497F4511876B056004E4DF8 /* Images.xcassets */,
 				8497F4481876B055004E4DF8 /* InfoPlist.strings */,
 				8497F44B1876B055004E4DF8 /* main.m */,
@@ -275,16 +315,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84944F62187C0B1200B10401 /* man-7.png in Resources */,
+				84ADB76C187CB213006F458E /* VSPeopleListViewController.xib in Resources */,
 				8497F44A1876B055004E4DF8 /* InfoPlist.strings in Resources */,
 				8497F4521876B056004E4DF8 /* Images.xcassets in Resources */,
-				84944F5F187C0ADE00B10401 /* email-7.png in Resources */,
+				84A03411187DCF33005581E7 /* list-star-7.png in Resources */,
+				84944F73187C34E300B10401 /* VSCellView.xib in Resources */,
+				84AEB660187E1915007DA5D2 /* VSPersonTweetsListViewController.xib in Resources */,
+				84AEB656187DEF4F007DA5D2 /* home-7.png in Resources */,
 				84944F5C187C0ABB00B10401 /* background.jpg in Resources */,
 				84944F5A187C0AAE00B10401 /* twitter_logo.jpg in Resources */,
 				84990D01187982A300A67AA8 /* VSMainPageViewController.xib in Resources */,
+				84AEB65B187DEF73007DA5D2 /* VSPersonPageViewController.xib in Resources */,
+				8493DE07187F0E0E00ACB22D /* book-7.png in Resources */,
 				849B092E1876F25D00F268B0 /* VSStartScreenController.xib in Resources */,
 				84AB9DB8187B143900E46F6A /* VSTweetsListViewController.xib in Resources */,
-				84944F65187C0B2600B10401 /* list-star-7.png in Resources */,
+				849604AD187EC24B00824F24 /* VSPersonPeopleListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,11 +337,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84944F63187C0B1200B10401 /* man-7.png in Resources */,
+				84944F74187C34E300B10401 /* VSCellView.xib in Resources */,
 				8497F4631876B056004E4DF8 /* InfoPlist.strings in Resources */,
 				84944F5D187C0ABB00B10401 /* background.jpg in Resources */,
-				84944F60187C0ADE00B10401 /* email-7.png in Resources */,
-				84944F66187C0B2600B10401 /* list-star-7.png in Resources */,
+				84A03412187DCF33005581E7 /* list-star-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,11 +351,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AEB65F187E1915007DA5D2 /* VSPersonTweetsListViewController.m in Sources */,
 				8497F44C1876B055004E4DF8 /* main.m in Sources */,
 				8497F4501876B056004E4DF8 /* VSAppDelegate.m in Sources */,
+				84ADB76B187CB213006F458E /* VSPeopleListViewController.m in Sources */,
+				84AEB65A187DEF73007DA5D2 /* VSPersonPageViewController.m in Sources */,
 				84990D00187982A300A67AA8 /* VSMainPageViewController.m in Sources */,
 				8497F4701876B1FF004E4DF8 /* VSStartScreenController.m in Sources */,
+				849604AC187EC24B00824F24 /* VSPersonPeopleListViewController.m in Sources */,
 				84AB9DB7187B143900E46F6A /* VSTweetsListViewController.m in Sources */,
+				84944F6D187C332D00B10401 /* VSCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8497F4651876B056004E4DF8 /* Twitter_client_v2_0Tests.m in Sources */,
+				84944F6E187C332D00B10401 /* VSCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
